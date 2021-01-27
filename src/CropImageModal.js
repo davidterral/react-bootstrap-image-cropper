@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Button, Modal, Spinner } from "react-bootstrap";
+import { Button, Modal, Spinner, Col } from "react-bootstrap";
 import useObjectURL from "use-object-url";
 
 import CropImagePanel from "./CropImagePanel";
@@ -106,12 +106,12 @@ export default function CropImageModal({
       </Modal.Body>
       <Modal.Footer>
         {showRemoveButton && (
-          <Button variant="danger" className="mr-auto" onClick={onRemove}>
+          <Button variant="secondary" onClick={onRemove}>
             {removeButtonText}
           </Button>
         )}
         {showConfirmButton && (
-          <Button variant="primary" onClick={handleConfirm}>
+          <Button onClick={handleConfirm} style={{ backgroundColor: '#68b921' }}>
             {confirmButtonText}
           </Button>
         )}

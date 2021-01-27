@@ -112,10 +112,12 @@ function CropImageModal(_ref) {
       quality = outputOptions.quality;
   var _displayOptions$title = displayOptions.title,
       title = _displayOptions$title === void 0 ? "Crop Image" : _displayOptions$title,
+      _displayOptions$heade = displayOptions.headerText,
+      headerText = _displayOptions$heade === void 0 ? "JPG, Send Largest Photo Possible" : _displayOptions$heade,
       _displayOptions$remov = displayOptions.removeButtonText,
       removeButtonText = _displayOptions$remov === void 0 ? "Remove" : _displayOptions$remov,
       _displayOptions$confi = displayOptions.confirmButtonText,
-      confirmButtonText = _displayOptions$confi === void 0 ? "Confirm" : _displayOptions$confi,
+      confirmButtonText = _displayOptions$confi === void 0 ? "Upload" : _displayOptions$confi,
       _displayOptions$showR = displayOptions.showRemoveButton,
       showRemoveButton = _displayOptions$showR === void 0 ? true : _displayOptions$showR,
       _displayOptions$showC = displayOptions.showConfirmButton,
@@ -208,7 +210,7 @@ function CropImageModal(_ref) {
       color: '#b3b1b1',
       fontSize: '14'
     }
-  }, headerText ? headerText : '')))), /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Modal.Body, {
+  }, headerText)))), /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Modal.Body, {
     style: {
       height: "50vh"
     }

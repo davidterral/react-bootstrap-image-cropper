@@ -48,7 +48,7 @@ export default function CropImageModal({
   inputOptions = {}, // {maxWidth, maxHeight, mimeType, quality}
   cropOptions = {}, // {aspect, maxZoom}
   outputOptions = {}, // {maxWidth, maxHeight, mimeType, quality}
-  displayOptions = {} // {title, removeButtonText, confirmButtonText, showRemoveButton, showConfirmButton}
+  displayOptions = {} // {title, headerText, removeButtonText, confirmButtonText, showRemoveButton, showConfirmButton}
 }) {
   const {
     maxWidth: inputMaxWidth = Infinity,
@@ -68,8 +68,9 @@ export default function CropImageModal({
 
   const {
     title = "Crop Image",
+    headerText = "JPG, Send Largest Photo Possible",
     removeButtonText = "Remove",
-    confirmButtonText = "Confirm",
+    confirmButtonText = "Upload",
     showRemoveButton = true,
     showConfirmButton = true
   } = displayOptions;
@@ -135,7 +136,7 @@ export default function CropImageModal({
           </Col>
           <Col xs={6} md={4} />
           <Col xs={6} md={4}>
-            <div style={{ color: '#b3b1b1', fontSize: '14' }}>{headerText ? headerText : ''}</div>
+            <div style={{ color: '#b3b1b1', fontSize: '14' }}>{headerText}</div>
           </Col>
         </Row>
       </Modal.Header>

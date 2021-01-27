@@ -27,14 +27,16 @@ function ImageCropperDemo() {
 
   return (
     <div>
-      <h1>ImageCropper</h1>
-      <ImageCropper
-        fileRef={fileRef}
-        onChange={handleChange}
-        cropOptions={{ aspect: 4 / 3, maxZoom: 10 }}
-        outputOptions={{ maxWidth: 400, maxHeight: 300 }}
-        previewOptions={{ width: 400, height: 300 }}
-      />
+      <h1>Example Photo Uploader & Cropper</h1>
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+        <ImageCropper
+          fileRef={fileRef}
+          onChange={handleChange}
+          cropOptions={{ aspect: 4 / 3, maxZoom: 10 }}
+          outputOptions={{ maxWidth: 400, maxHeight: 300 }}
+          previewOptions={{ width: 400, height: 300 }}
+        />
+      </div>
     </div>
   );
 }

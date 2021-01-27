@@ -45,6 +45,9 @@ export default function CropImageModal({
   onConfirm, // (croppedFile) => void
   onCancel, // void => void
   onRemove, // void => void
+  handleNewInput,
+  handleFileChange,
+  fileInputRef,
   inputOptions = {}, // {maxWidth, maxHeight, mimeType, quality}
   cropOptions = {}, // {aspect, maxZoom}
   outputOptions = {}, // {maxWidth, maxHeight, mimeType, quality}
@@ -139,13 +142,21 @@ export default function CropImageModal({
         <Container>
           <Row style={{ padding: '30px 0px 10px 0px' }}>
             <Col md="auto" style={{ paddingLeft: '0px' }}>
-              <Modal.Title style={{ color: '#8c8c8d', fontSize: '18', fontWeight: '400' }}>{title}</Modal.Title>
+              <Modal.Title style={{ color: '#212529', fontSize: '18', fontWeight: '400' }}>{title}</Modal.Title>
             </Col>
             <Col />
           </Row>
           <Row style={{ paddingBottom: '5px' }}>
             <Col xs={6} md={4} style={{ paddingLeft: '0px' }}>
-              <Button variant="light" style={{ fontWeight: 'bold', border: '1px solid', minWidth: '120px' }}>Change Image</Button>
+              <input
+                ref={fileInputRef}
+                type="file"
+                accept="image/*"
+                value=""
+                onChange={handleFileChange}
+                hidden
+              />
+              <Button variant="light" style={{ fontWeight: 'bold', border: '1px solid', minWidth: '120px' }} onClick={handleNewInput}>Change Image</Button>
             </Col>
             <Col />
             <Col md="auto">

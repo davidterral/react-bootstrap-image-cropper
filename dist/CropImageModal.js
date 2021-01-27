@@ -182,35 +182,31 @@ function CropImageModal(_ref) {
     backdrop: "static",
     centered: true
   }, /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Modal.Header, {
-    closeButton: true
-  }, /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Row, null, /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Col, {
-    xs: 12,
-    md: 8
+    closeButton: true,
+    style: {
+      borderBottom: 'none',
+      padding: '10px 30px 10px 40px'
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Container, null, /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Row, null, /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Col, {
+    md: "auto"
   }, /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Modal.Title, {
     style: {
       color: '#8c8c8d',
       fontSize: '18'
     }
-  }, title)), /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Col, {
-    xs: 6,
-    md: 4
-  })), /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Row, null, /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Col, {
+  }, title)), /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Col, null)), /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Row, null, /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Col, {
     xs: 6,
     md: 4
   }, /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Button, {
     variant: "outline-secondary"
-  }, "Change Image")), /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Col, {
-    xs: 6,
-    md: 4
-  }), /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Col, {
-    xs: 6,
-    md: 4
+  }, "Change Image")), /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Col, null), /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Col, {
+    md: "auto"
   }, /*#__PURE__*/_react["default"].createElement("div", {
     style: {
       color: '#b3b1b1',
       fontSize: '14'
     }
-  }, headerText)))), /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Modal.Body, {
+  }, headerText))))), /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Modal.Body, {
     style: {
       height: "50vh"
     }
@@ -225,11 +221,16 @@ function CropImageModal(_ref) {
     onCropComplete: handleCropComplete,
     aspect: aspect,
     maxZoom: maxZoom
-  })), /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Modal.Footer, null, /*#__PURE__*/_react["default"].createElement(_Grid["default"], {
+  })), /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Modal.Footer, {
+    style: {
+      borderTop: 'none',
+      padding: '10px 40px'
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_Grid["default"], {
     container: true,
     spacing: 2,
     style: {
-      marginLeft: '20px',
+      marginLeft: '0px',
       marginRight: 'auto',
       maxWidth: '40%'
     }

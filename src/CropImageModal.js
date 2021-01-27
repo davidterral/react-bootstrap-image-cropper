@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Button, Modal, Spinner, Col, Row } from "react-bootstrap";
+import { Button, Modal, Spinner, Col, Row, Container } from "react-bootstrap";
 import Grid from '@material-ui/core/Grid';
 import Slider from '@material-ui/core/Slider';
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
@@ -123,22 +123,24 @@ export default function CropImageModal({
 
   return (
     <Modal show={show} onHide={onCancel} size="lg" backdrop="static" centered>
-      <Modal.Header closeButton>
-        <Row>
-          <Col xs={12} md={8}>
-            <Modal.Title style={{ color: '#8c8c8d', fontSize: '18' }}>{title}</Modal.Title>
-          </Col>
-          <Col xs={6} md={4} />
-        </Row>
-        <Row>
-          <Col xs={6} md={4}>
-            <Button variant="outline-secondary">Change Image</Button>
-          </Col>
-          <Col xs={6} md={4} />
-          <Col xs={6} md={4}>
-            <div style={{ color: '#b3b1b1', fontSize: '14' }}>{headerText}</div>
-          </Col>
-        </Row>
+      <Modal.Header closeButton style={{ borderBottom: 'none', padding: '10px 30px 10px 40px' }}>
+        <Container>
+          <Row>
+            <Col md="auto">
+              <Modal.Title style={{ color: '#8c8c8d', fontSize: '18' }}>{title}</Modal.Title>
+            </Col>
+            <Col />
+          </Row>
+          <Row>
+            <Col xs={6} md={4}>
+              <Button variant="outline-secondary">Change Image</Button>
+            </Col>
+            <Col />
+            <Col md="auto">
+              <div style={{ color: '#b3b1b1', fontSize: '14' }}>{headerText}</div>
+            </Col>
+          </Row>
+        </Container>
       </Modal.Header>
       <Modal.Body style={{ height: "50vh" }}>
         {resizing && (
@@ -157,8 +159,8 @@ export default function CropImageModal({
           />
         )}
       </Modal.Body>
-      <Modal.Footer>
-        <Grid container spacing={2} style={{ marginLeft: '20px', marginRight: 'auto', maxWidth: '40%' }}>
+      <Modal.Footer style={{ borderTop: 'none', padding: '10px 40px' }}>
+        <Grid container spacing={2} style={{ marginLeft: '0px', marginRight: 'auto', maxWidth: '40%' }}>
           <Grid item>
             <RemoveCircleOutlineIcon color="disabled" />
           </Grid>

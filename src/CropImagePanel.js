@@ -23,16 +23,18 @@ export default function CropImagePanel({
   }
 
   return (
-    <Cropper
-      image={imageUrl}
-      maxZoom={maxZoom}
-      aspect={aspect}
-      crop={crop}
-      zoom={zoom}
-      onCropChange={handleCropChange}
-      onZoomChange={handleZoomChange}
-      onCropComplete={onCropComplete}
-      restrictPosition={false}
-    />
+    <div style={{ margin: '0px 40px' }}>
+      <Cropper
+        image={imageUrl}
+        maxZoom={maxZoom}
+        aspect={aspect}
+        crop={crop}
+        zoom={zoom}
+        onCropChange={handleCropChange}
+        onZoomChange={handleZoomChange}
+        onCropComplete={onCropComplete}
+        restrictPosition={false}
+      />
+    </div>
   );
 }

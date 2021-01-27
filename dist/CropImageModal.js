@@ -175,6 +175,22 @@ function CropImageModal(_ref) {
     });
   }
 
+  function handleZoomIn(event, value) {
+    onChange(function (prevValue) {
+      return _objectSpread(_objectSpread({}, prevValue), {}, {
+        zoom: prevValue.zoom + 0.1
+      });
+    });
+  }
+
+  function handleZoomOut(event, value) {
+    onChange(function (prevValue) {
+      return _objectSpread(_objectSpread({}, prevValue), {}, {
+        zoom: prevValue.zoom - 0.1
+      });
+    });
+  }
+
   return /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Modal, {
     show: show,
     onHide: onCancel,
@@ -213,9 +229,11 @@ function CropImageModal(_ref) {
       paddingLeft: '0px'
     }
   }, /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Button, {
-    variant: "outline-secondary",
+    variant: "light",
     style: {
-      fontWeight: 'bold'
+      fontWeight: 'bold',
+      border: '1px solid',
+      minWidth: '120px'
     }
   }, "Change Image")), /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Col, null), /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Col, {
     md: "auto"
@@ -260,7 +278,8 @@ function CropImageModal(_ref) {
       paddingLeft: '0px'
     }
   }, /*#__PURE__*/_react["default"].createElement(_RemoveCircleOutline["default"], {
-    color: "disabled"
+    color: "disabled",
+    onClick: handleZoomOut
   })), /*#__PURE__*/_react["default"].createElement(_Grid["default"], {
     item: true,
     xs: true
@@ -276,7 +295,8 @@ function CropImageModal(_ref) {
   })), /*#__PURE__*/_react["default"].createElement(_Grid["default"], {
     item: true
   }, /*#__PURE__*/_react["default"].createElement(_AddCircleOutline["default"], {
-    color: "disabled"
+    color: "disabled",
+    onClick: handleZoomIn
   }))), showRemoveButton && /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Button, {
     variant: "light",
     onClick: onRemove,

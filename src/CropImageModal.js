@@ -121,6 +121,18 @@ export default function CropImageModal({
     })
   }
 
+  function handleZoomIn(event, value) {
+    onChange(prevValue => {
+      return { ...prevValue, zoom: prevValue.zoom + 0.1 }
+    })
+  }
+
+  function handleZoomOut(event, value) {
+    onChange(prevValue => {
+      return { ...prevValue, zoom: prevValue.zoom - 0.1 }
+    })
+  }
+
   return (
     <Modal show={show} onHide={onCancel} size="lg" backdrop="static" centered>
       <Modal.Header closeButton style={{ borderBottom: 'none', padding: '10px 30px 10px 40px' }}>
@@ -133,7 +145,7 @@ export default function CropImageModal({
           </Row>
           <Row style={{ paddingBottom: '5px' }}>
             <Col xs={6} md={4} style={{ paddingLeft: '0px' }}>
-              <Button variant="outline-secondary" style={{ fontWeight: 'bold' }}>Change Image</Button>
+              <Button variant="light" style={{ fontWeight: 'bold', border: '1px solid', minWidth: '120px' }}>Change Image</Button>
             </Col>
             <Col />
             <Col md="auto">
@@ -162,7 +174,7 @@ export default function CropImageModal({
       <Modal.Footer style={{ borderTop: 'none', padding: '20px 40px' }}>
         <Grid container spacing={2} style={{ marginLeft: '0px', marginRight: 'auto', maxWidth: '40%' }}>
           <Grid item style={{ paddingLeft: '0px' }}>
-            <RemoveCircleOutlineIcon color="disabled" />
+            <RemoveCircleOutlineIcon color="disabled" onClick={handleZoomOut} />
           </Grid>
           <Grid item xs>
             <CustomSlider
@@ -175,7 +187,7 @@ export default function CropImageModal({
             />
           </Grid>
           <Grid item>
-            <AddCircleOutlineIcon color="disabled" />
+            <AddCircleOutlineIcon color="disabled" onClick={handleZoomIn} />
           </Grid>
         </Grid>
 

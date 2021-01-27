@@ -45,7 +45,6 @@ export default function CropImageModal({
   onConfirm, // (croppedFile) => void
   onCancel, // void => void
   onRemove, // void => void
-  handleNewInput,
   inputOptions = {}, // {maxWidth, maxHeight, mimeType, quality}
   cropOptions = {}, // {aspect, maxZoom}
   outputOptions = {}, // {maxWidth, maxHeight, mimeType, quality}
@@ -146,7 +145,7 @@ export default function CropImageModal({
           </Row>
           <Row style={{ paddingBottom: '5px' }}>
             <Col xs={6} md={4} style={{ paddingLeft: '0px' }}>
-              <Button variant="light" style={{ fontWeight: 'bold', border: '1px solid', minWidth: '120px' }} onClick={handleNewInput}>Change Image</Button>
+              {/* <Button variant="light" style={{ fontWeight: 'bold', border: '1px solid', minWidth: '120px' }}>Change Image</Button> */}
             </Col>
             <Col />
             <Col md="auto">

@@ -86,7 +86,6 @@ function CropImageModal(_ref) {
       onConfirm = _ref.onConfirm,
       onCancel = _ref.onCancel,
       onRemove = _ref.onRemove,
-      handleNewInput = _ref.handleNewInput,
       _ref$inputOptions = _ref.inputOptions,
       inputOptions = _ref$inputOptions === void 0 ? {} : _ref$inputOptions,
       _ref$cropOptions = _ref.cropOptions,
@@ -229,15 +228,7 @@ function CropImageModal(_ref) {
     style: {
       paddingLeft: '0px'
     }
-  }, /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Button, {
-    variant: "light",
-    style: {
-      fontWeight: 'bold',
-      border: '1px solid',
-      minWidth: '120px'
-    },
-    onClick: handleNewInput
-  }, "Change Image")), /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Col, null), /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Col, {
+  }), /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Col, null), /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Col, {
     md: "auto"
   }, /*#__PURE__*/_react["default"].createElement("div", {
     style: {

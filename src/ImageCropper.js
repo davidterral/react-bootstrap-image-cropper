@@ -146,7 +146,6 @@ export function ControlledImageCropper({
         onConfirm={onConfirm}
         onCancel={onCancel}
         onRemove={onRemove}
-        handleNewInput={handleClick}
         inputOptions={inputOptions}
         cropOptions={cropOptions}
         outputOptions={outputOptions}

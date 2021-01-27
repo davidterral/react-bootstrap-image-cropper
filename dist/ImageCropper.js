@@ -195,7 +195,6 @@ function ControlledImageCropper(_ref2) {
     onConfirm: onConfirm,
     onCancel: onCancel,
     onRemove: onRemove,
-    handleNewInput: handleClick,
     inputOptions: inputOptions,
     cropOptions: cropOptions,
     outputOptions: outputOptions,

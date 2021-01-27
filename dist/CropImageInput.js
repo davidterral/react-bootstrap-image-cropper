@@ -19,16 +19,20 @@ function InputButton(_ref) {
   var width = _ref.width,
       height = _ref.height,
       _ref$children = _ref.children,
-      children = _ref$children === void 0 ? "Select Image" : _ref$children,
+      children = _ref$children === void 0 ? "Click Here to Select an Image" : _ref$children,
       onClick = _ref.onClick;
-  return /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Button, {
+  return /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      border: '2px solid black'
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Button, {
     variant: "light",
     onClick: onClick,
     style: {
       width: width,
       height: height
     }
-  }, children);
+  }, children));
 }
 
 function InputPreview(_ref2) {
@@ -37,7 +41,11 @@ function InputPreview(_ref2) {
       imageFile = _ref2.imageFile,
       onClick = _ref2.onClick;
   var url = (0, _useObjectUrl["default"])(imageFile);
-  return /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Image, {
+  return /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      border: '2px solid black'
+    }
+  }, /*#__PURE__*/_react["default"].createElement("h6", null, "Image Preview:"), /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Image, {
     style: {
       width: width,
       height: height,
@@ -46,7 +54,7 @@ function InputPreview(_ref2) {
     },
     src: url,
     onClick: onClick
-  });
+  }));
 }
 
 function CropImageInput(_ref3) {

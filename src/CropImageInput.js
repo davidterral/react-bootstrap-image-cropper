@@ -5,24 +5,30 @@ import useObjectURL from "use-object-url";
 export function InputButton({
   width,
   height,
-  children = "Select Image",
+  children = "Click Here to Select an Image",
   onClick
 }) {
   return (
-    <Button variant="light" onClick={onClick} style={{ width, height }}>
-      {children}
-    </Button>
+    <div style={{ border: '2px solid black' }}>
+      <Button variant="light" onClick={onClick} style={{ width, height }}>
+        {children}
+      </Button>
+    </div>
   );
 }
 
 export function InputPreview({ width, height, imageFile, onClick }) {
   const url = useObjectURL(imageFile);
   return (
-    <Image
-      style={{ width, height, cursor: "pointer", objectFit: "contain" }}
-      src={url}
-      onClick={onClick}
-    />
+    <div style={{ border: '2px solid black' }}>
+      <h6>Image Preview:</h6>
+      <Image
+        style={{ width, height, cursor: "pointer", objectFit: "contain" }}
+        src={url}
+        onClick={onClick}
+      />
+    </div>
+
   );
 }
 

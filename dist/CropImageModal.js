@@ -11,6 +11,8 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _reactBootstrap = require("react-bootstrap");
 
+var _Slider = _interopRequireDefault(require("@material-ui/core/Slider"));
+
 var _useObjectUrl = _interopRequireDefault(require("use-object-url"));
 
 var _CropImagePanel = _interopRequireDefault(require("./CropImagePanel"));
@@ -122,6 +124,12 @@ function CropImageModal(_ref) {
     (0, _utils.getCroppedFile)(resizedUrl, cropResultRef.current.croppedAreaPixels, maxWidth, maxHeight, mimeType, quality).then(onConfirm);
   }
 
+  function handleZoomChange(event, value) {
+    onChange({
+      zoom: value
+    });
+  }
+
   return /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Modal, {
     show: show,
     onHide: onCancel,
@@ -143,8 +151,15 @@ function CropImageModal(_ref) {
     onCropComplete: handleCropComplete,
     aspect: aspect,
     maxZoom: maxZoom
-  })), /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Modal.Footer, null, showRemoveButton && /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Button, {
-    variant: "secondary",
+  })), /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Modal.Footer, null, /*#__PURE__*/_react["default"].createElement(_Slider["default"], {
+    value: value.zoom,
+    defaultValue: 1,
+    color: "#68b921",
+    max: maxZoom,
+    step: 0.1,
+    onChange: handleZoomChange
+  }), showRemoveButton && /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Button, {
+    variant: "light",
     onClick: onRemove
   }, removeButtonText), showConfirmButton && /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Button, {
     onClick: handleConfirm,

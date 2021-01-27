@@ -24,6 +24,7 @@
     "react-bootstrap": "^1.0.0-beta.10"
   },
   "dependencies": {
+    "@material-ui/core": "^4.11.3",
     "react-easy-crop": "^1.16.0",
     "use-object-url": "^1.0.0"
   },

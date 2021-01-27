@@ -51,6 +51,7 @@ function CropImagePanel(_ref) {
     zoom: zoom,
     onCropChange: handleCropChange,
     onZoomChange: handleZoomChange,
-    onCropComplete: onCropComplete
+    onCropComplete: onCropComplete,
+    restrictPosition: false
   });
 }

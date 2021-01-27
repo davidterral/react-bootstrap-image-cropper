@@ -32,6 +32,7 @@ export default function CropImagePanel({
       onCropChange={handleCropChange}
       onZoomChange={handleZoomChange}
       onCropComplete={onCropComplete}
+      restrictPosition={false}
     />
   );
 }

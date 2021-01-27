@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Button, Modal, Spinner, Col } from "react-bootstrap";
+import Slider from '@material-ui/core/Slider';
 import useObjectURL from "use-object-url";
 
 import CropImagePanel from "./CropImagePanel";
@@ -82,6 +83,10 @@ export default function CropImageModal({
     ).then(onConfirm);
   }
 
+  function handleZoomChange(event, value) {
+    onChange({ zoom: value });
+  }
+
   return (
     <Modal show={show} onHide={onCancel} size="lg">
       <Modal.Header closeButton>
@@ -105,8 +110,16 @@ export default function CropImageModal({
         )}
       </Modal.Body>
       <Modal.Footer>
+        <Slider
+          value={value.zoom}
+          defaultValue={1}
+          color="#68b921"
+          max={maxZoom}
+          step={0.1}
+          onChange={handleZoomChange}
+        />
         {showRemoveButton && (
-          <Button variant="secondary" onClick={onRemove}>
+          <Button variant="light" onClick={onRemove}>
             {removeButtonText}
           </Button>
         )}

@@ -147,8 +147,6 @@ export function ControlledImageCropper({
         onCancel={onCancel}
         onRemove={onRemove}
         handleNewInput={handleClick}
-        handleFileChange={handleFileChange}
-        fileInputRef={fileInputRef}
         inputOptions={inputOptions}
         cropOptions={cropOptions}
         outputOptions={outputOptions}

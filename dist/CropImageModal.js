@@ -87,8 +87,6 @@ function CropImageModal(_ref) {
       onCancel = _ref.onCancel,
       onRemove = _ref.onRemove,
       handleNewInput = _ref.handleNewInput,
-      handleFileChange = _ref.handleFileChange,
-      fileInputRef = _ref.fileInputRef,
       _ref$inputOptions = _ref.inputOptions,
       inputOptions = _ref$inputOptions === void 0 ? {} : _ref$inputOptions,
       _ref$cropOptions = _ref.cropOptions,
@@ -231,14 +229,7 @@ function CropImageModal(_ref) {
     style: {
       paddingLeft: '0px'
     }
-  }, /*#__PURE__*/_react["default"].createElement("input", {
-    ref: fileInputRef,
-    type: "file",
-    accept: "image/*",
-    value: "",
-    onChange: handleFileChange,
-    hidden: true
-  }), /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Button, {
+  }, /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Button, {
     variant: "light",
     style: {
       fontWeight: 'bold',

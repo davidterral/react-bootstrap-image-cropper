@@ -20,11 +20,13 @@ export function InputButton({
 export function InputPreview({ width, height, imageFile, onClick }) {
   const url = useObjectURL(imageFile);
   return (
-    <Image
-      style={{ width, height, cursor: "pointer", objectFit: "contain" }}
-      src={url}
-      onClick={onClick}
-    />
+    <div style={{ border: '1px solid gray' }}>
+      <Image
+        style={{ width, height, cursor: "pointer", objectFit: "contain" }}
+        src={url}
+        onClick={onClick}
+      />
+    </div>
 
   );
 }

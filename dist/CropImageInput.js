@@ -41,7 +41,11 @@ function InputPreview(_ref2) {
       imageFile = _ref2.imageFile,
       onClick = _ref2.onClick;
   var url = (0, _useObjectUrl["default"])(imageFile);
-  return /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Image, {
+  return /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      border: '1px solid gray'
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Image, {
     style: {
       width: width,
       height: height,
@@ -50,7 +54,7 @@ function InputPreview(_ref2) {
     },
     src: url,
     onClick: onClick
-  });
+  }));
 }
 
 function CropImageInput(_ref3) {

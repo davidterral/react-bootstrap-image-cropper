@@ -84,7 +84,7 @@ export default function CropImageModal({
   }
 
   function handleZoomChange(event, value) {
-    onChange({ zoom: value });
+    onChange({ crop, zoom: value });
   }
 
   return (
@@ -113,7 +113,7 @@ export default function CropImageModal({
         <Slider
           value={value ? value.zoom || 1 : 1}
           defaultValue={1}
-          color="#68b921"
+          color="secondary"
           max={maxZoom}
           step={0.1}
           onChange={handleZoomChange}

@@ -111,7 +111,7 @@ function CropImageModal(_ref) {
       mimeType = _outputOptions$mimeTy === void 0 ? "image/jpeg" : _outputOptions$mimeTy,
       quality = outputOptions.quality;
   var _displayOptions$title = displayOptions.title,
-      title = _displayOptions$title === void 0 ? "Crop Image" : _displayOptions$title,
+      title = _displayOptions$title === void 0 ? "Image Uploader" : _displayOptions$title,
       _displayOptions$heade = displayOptions.headerText,
       headerText = _displayOptions$heade === void 0 ? "JPG, Send Largest Photo Possible" : _displayOptions$heade,
       _displayOptions$remov = displayOptions.removeButtonText,
@@ -187,28 +187,41 @@ function CropImageModal(_ref) {
       borderBottom: 'none',
       padding: '10px 30px 10px 40px'
     }
-  }, /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Container, null, /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Row, null, /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Col, {
+  }, /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Container, null, /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Row, {
+    style: {
+      padding: '30px 0px 10px 0px'
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Col, {
     md: "auto"
   }, /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Modal.Title, {
     style: {
       color: '#8c8c8d',
       fontSize: '18'
     }
-  }, title)), /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Col, null)), /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Row, null, /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Col, {
+  }, title)), /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Col, null)), /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Row, {
+    style: {
+      paddingBottom: '5px'
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Col, {
     xs: 6,
     md: 4
   }, /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Button, {
-    variant: "outline-secondary"
+    variant: "outline-secondary",
+    style: {
+      fontWeight: 'bold'
+    }
   }, "Change Image")), /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Col, null), /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Col, {
     md: "auto"
   }, /*#__PURE__*/_react["default"].createElement("div", {
     style: {
       color: '#b3b1b1',
-      fontSize: '14'
+      fontSize: '14',
+      paddingRight: '0px'
     }
   }, headerText))))), /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Modal.Body, {
     style: {
-      height: "50vh"
+      height: "50vh",
+      margin: '0px 40px'
     }
   }, resizing && /*#__PURE__*/_react["default"].createElement("div", {
     className: "d-flex justify-content-center align-items-center h-100"
@@ -253,12 +266,16 @@ function CropImageModal(_ref) {
     color: "disabled"
   }))), showRemoveButton && /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Button, {
     variant: "light",
-    onClick: onRemove
+    onClick: onRemove,
+    style: {
+      fontWeight: 'bold'
+    }
   }, removeButtonText), showConfirmButton && /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Button, {
     onClick: handleConfirm,
     style: {
       backgroundColor: '#68b921',
-      border: 'none'
+      border: 'none',
+      fontWeight: 'bold'
     }
   }, confirmButtonText)));
 }

@@ -67,7 +67,7 @@ export default function CropImageModal({
   } = outputOptions;
 
   const {
-    title = "Crop Image",
+    title = "Image Uploader",
     headerText = "JPG, Send Largest Photo Possible",
     removeButtonText = "Remove",
     confirmButtonText = "Upload",
@@ -125,24 +125,24 @@ export default function CropImageModal({
     <Modal show={show} onHide={onCancel} size="lg" backdrop="static" centered>
       <Modal.Header closeButton style={{ borderBottom: 'none', padding: '10px 30px 10px 40px' }}>
         <Container>
-          <Row>
+          <Row style={{ padding: '30px 0px 10px 0px' }}>
             <Col md="auto">
               <Modal.Title style={{ color: '#8c8c8d', fontSize: '18' }}>{title}</Modal.Title>
             </Col>
             <Col />
           </Row>
-          <Row>
+          <Row style={{ paddingBottom: '5px' }}>
             <Col xs={6} md={4}>
-              <Button variant="outline-secondary">Change Image</Button>
+              <Button variant="outline-secondary" style={{ fontWeight: 'bold' }}>Change Image</Button>
             </Col>
             <Col />
             <Col md="auto">
-              <div style={{ color: '#b3b1b1', fontSize: '14' }}>{headerText}</div>
+              <div style={{ color: '#b3b1b1', fontSize: '14', paddingRight: '0px' }}>{headerText}</div>
             </Col>
           </Row>
         </Container>
       </Modal.Header>
-      <Modal.Body style={{ height: "50vh" }}>
+      <Modal.Body style={{ height: "50vh", margin: '0px 40px' }}>
         {resizing && (
           <div className="d-flex justify-content-center align-items-center h-100">
             <Spinner animation="grow" />
@@ -179,12 +179,12 @@ export default function CropImageModal({
         </Grid>
 
         {showRemoveButton && (
-          <Button variant="light" onClick={onRemove}>
+          <Button variant="light" onClick={onRemove} style={{ fontWeight: 'bold' }}>
             {removeButtonText}
           </Button>
         )}
         {showConfirmButton && (
-          <Button onClick={handleConfirm} style={{ backgroundColor: '#68b921', border: 'none' }}>
+          <Button onClick={handleConfirm} style={{ backgroundColor: '#68b921', border: 'none', fontWeight: 'bold' }}>
             {confirmButtonText}
           </Button>
         )}

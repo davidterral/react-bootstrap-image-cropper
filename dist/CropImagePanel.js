@@ -43,11 +43,7 @@ function CropImagePanel(_ref) {
     });
   }
 
-  return /*#__PURE__*/_react["default"].createElement("div", {
-    style: {
-      margin: '0px 40px'
-    }
-  }, /*#__PURE__*/_react["default"].createElement(_reactEasyCrop["default"], {
+  return /*#__PURE__*/_react["default"].createElement(_reactEasyCrop["default"], {
     image: imageUrl,
     maxZoom: maxZoom,
     aspect: aspect,
@@ -57,5 +53,5 @@ function CropImagePanel(_ref) {
     onZoomChange: handleZoomChange,
     onCropComplete: onCropComplete,
     restrictPosition: false
-  }));
+  });
 }

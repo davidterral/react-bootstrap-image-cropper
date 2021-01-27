@@ -135,7 +135,7 @@ export default function CropImageModal({
           </Col>
           <Col xs={6} md={4} />
           <Col xs={6} md={4}>
-            <div style={{ color: '#b3b1b1', fontSize: '14' }}>{headerText}</div>
+            <div style={{ color: '#b3b1b1', fontSize: '14' }}>{headerText ? headerText : ''}</div>
           </Col>
         </Row>
       </Modal.Header>

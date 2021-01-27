@@ -208,7 +208,7 @@ function CropImageModal(_ref) {
       color: '#b3b1b1',
       fontSize: '14'
     }
-  }, headerText)))), /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Modal.Body, {
+  }, headerText ? headerText : '')))), /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Modal.Body, {
     style: {
       height: "50vh"
     }

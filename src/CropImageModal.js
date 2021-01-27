@@ -84,7 +84,9 @@ export default function CropImageModal({
   }
 
   function handleZoomChange(event, value) {
-    onChange({ crop, zoom: value });
+    onChange(prevValue => {
+      return { ...prevValue, zoom: value }
+    })
   }
 
   return (

@@ -1,10 +1,30 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Button, Modal, Spinner, Col } from "react-bootstrap";
+import Grid from '@material-ui/core/Grid';
 import Slider from '@material-ui/core/Slider';
+import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
+import RemoveCircleOutlineIcon from '@material-ui/icons/RemoveCircleOutline';
+import { withStyles } from '@material-ui/core/styles';
 import useObjectURL from "use-object-url";
 
 import CropImagePanel from "./CropImagePanel";
 import { getCroppedFile, limitImageSize } from "./utils";
+
+const CustomSlider = withStyles({
+  root: {
+    color: '#68b921',
+    height: 8,
+  },
+  active: {},
+  track: {
+    height: 8,
+    borderRadius: 4,
+  },
+  rail: {
+    height: 8,
+    borderRadius: 4,
+  },
+})(Slider);
 
 export default function CropImageModal({
   show,
@@ -112,14 +132,25 @@ export default function CropImageModal({
         )}
       </Modal.Body>
       <Modal.Footer>
-        <Slider
-          value={value ? value.zoom || 1 : 1}
-          defaultValue={1}
-          color="secondary"
-          max={maxZoom}
-          step={0.1}
-          onChange={handleZoomChange}
-        />
+        <Grid container spacing={2} style={{ marginLeft: '20px', marginRight: 'auto', maxWidth: '30%' }}>
+          <Grid item>
+            <RemoveCircleOutlineIcon color="secondary" />
+          </Grid>
+          <Grid item xs>
+            <CustomSlider
+              value={value ? value.zoom || 1 : 1}
+              defaultValue={1}
+              color="secondary"
+              max={maxZoom}
+              step={0.1}
+              onChange={handleZoomChange}
+            />
+          </Grid>
+          <Grid item>
+            <AddCircleOutlineIcon color="secondary" />
+          </Grid>
+        </Grid>
+
         {showRemoveButton && (
           <Button variant="light" onClick={onRemove}>
             {removeButtonText}

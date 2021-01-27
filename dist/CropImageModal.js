@@ -11,7 +11,15 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _reactBootstrap = require("react-bootstrap");
 
+var _Grid = _interopRequireDefault(require("@material-ui/core/Grid"));
+
 var _Slider = _interopRequireDefault(require("@material-ui/core/Slider"));
+
+var _AddCircleOutline = _interopRequireDefault(require("@material-ui/icons/AddCircleOutline"));
+
+var _RemoveCircleOutline = _interopRequireDefault(require("@material-ui/icons/RemoveCircleOutline"));
+
+var _styles = require("@material-ui/core/styles");
 
 var _useObjectUrl = _interopRequireDefault(require("use-object-url"));
 
@@ -42,6 +50,22 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+var CustomSlider = (0, _styles.withStyles)({
+  root: {
+    color: '#68b921',
+    height: 8
+  },
+  active: {},
+  track: {
+    height: 8,
+    borderRadius: 4
+  },
+  rail: {
+    height: 8,
+    borderRadius: 4
+  }
+})(_Slider["default"]);
 
 function CropImageModal(_ref) {
   var show = _ref.show,
@@ -159,14 +183,33 @@ function CropImageModal(_ref) {
     onCropComplete: handleCropComplete,
     aspect: aspect,
     maxZoom: maxZoom
-  })), /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Modal.Footer, null, /*#__PURE__*/_react["default"].createElement(_Slider["default"], {
+  })), /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Modal.Footer, null, /*#__PURE__*/_react["default"].createElement(_Grid["default"], {
+    container: true,
+    spacing: 2,
+    style: {
+      marginLeft: '20px',
+      marginRight: 'auto',
+      maxWidth: '30%'
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_Grid["default"], {
+    item: true
+  }, /*#__PURE__*/_react["default"].createElement(_RemoveCircleOutline["default"], {
+    color: "secondary"
+  })), /*#__PURE__*/_react["default"].createElement(_Grid["default"], {
+    item: true,
+    xs: true
+  }, /*#__PURE__*/_react["default"].createElement(CustomSlider, {
     value: value ? value.zoom || 1 : 1,
     defaultValue: 1,
     color: "secondary",
     max: maxZoom,
     step: 0.1,
     onChange: handleZoomChange
-  }), showRemoveButton && /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Button, {
+  })), /*#__PURE__*/_react["default"].createElement(_Grid["default"], {
+    item: true
+  }, /*#__PURE__*/_react["default"].createElement(_AddCircleOutline["default"], {
+    color: "secondary"
+  }))), showRemoveButton && /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Button, {
     variant: "light",
     onClick: onRemove
   }, removeButtonText), showConfirmButton && /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Button, {

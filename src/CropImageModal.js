@@ -126,8 +126,8 @@ export default function CropImageModal({
       <Modal.Header closeButton style={{ borderBottom: 'none', padding: '10px 30px 10px 40px' }}>
         <Container>
           <Row style={{ padding: '30px 0px 10px 0px' }}>
-            <Col md="auto">
-              <Modal.Title style={{ color: '#8c8c8d', fontSize: '18' }}>{title}</Modal.Title>
+            <Col md="auto" style={{ paddingLeft: '0px' }}>
+              <Modal.Title style={{ color: '#8c8c8d', fontSize: '18', fontWeight: '400' }}>{title}</Modal.Title>
             </Col>
             <Col />
           </Row>
@@ -159,7 +159,7 @@ export default function CropImageModal({
           />
         )}
       </Modal.Body>
-      <Modal.Footer style={{ borderTop: 'none', padding: '10px 40px' }}>
+      <Modal.Footer style={{ borderTop: 'none', padding: '20px 40px' }}>
         <Grid container spacing={2} style={{ marginLeft: '0px', marginRight: 'auto', maxWidth: '40%' }}>
           <Grid item style={{ paddingLeft: '0px' }}>
             <RemoveCircleOutlineIcon color="disabled" />
@@ -180,12 +180,12 @@ export default function CropImageModal({
         </Grid>
 
         {showRemoveButton && (
-          <Button variant="light" onClick={onRemove} style={{ fontWeight: 'bold', border: '1px solid' }}>
+          <Button variant="light" onClick={onRemove} style={{ fontWeight: 'bold', border: '1px solid', minWidth: '120px' }}>
             {removeButtonText}
           </Button>
         )}
         {showConfirmButton && (
-          <Button onClick={handleConfirm} style={{ backgroundColor: '#68b921', border: '1px solid #68b921', fontWeight: 'bold', marginRight: '0px' }}>
+          <Button onClick={handleConfirm} style={{ backgroundColor: '#68b921', border: '1px solid #68b921', fontWeight: 'bold', marginRight: '0px', minWidth: '120px' }}>
             {confirmButtonText}
           </Button>
         )}

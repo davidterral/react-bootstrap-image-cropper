@@ -204,7 +204,10 @@ function CropImageModal(_ref) {
     }
   }, /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Col, {
     xs: 6,
-    md: 4
+    md: 4,
+    style: {
+      paddingLeft: '0px'
+    }
   }, /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Button, {
     variant: "outline-secondary",
     style: {
@@ -248,7 +251,10 @@ function CropImageModal(_ref) {
       maxWidth: '40%'
     }
   }, /*#__PURE__*/_react["default"].createElement(_Grid["default"], {
-    item: true
+    item: true,
+    style: {
+      paddingLeft: '0px'
+    }
   }, /*#__PURE__*/_react["default"].createElement(_RemoveCircleOutline["default"], {
     color: "disabled"
   })), /*#__PURE__*/_react["default"].createElement(_Grid["default"], {
@@ -259,7 +265,10 @@ function CropImageModal(_ref) {
     defaultValue: 1,
     max: maxZoom,
     step: 0.1,
-    onChange: handleZoomChange
+    onChange: handleZoomChange,
+    style: {
+      padding: '10px 0px 13px 0px'
+    }
   })), /*#__PURE__*/_react["default"].createElement(_Grid["default"], {
     item: true
   }, /*#__PURE__*/_react["default"].createElement(_AddCircleOutline["default"], {
@@ -268,14 +277,16 @@ function CropImageModal(_ref) {
     variant: "light",
     onClick: onRemove,
     style: {
-      fontWeight: 'bold'
+      fontWeight: 'bold',
+      border: '1px solid'
     }
   }, removeButtonText), showConfirmButton && /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Button, {
     onClick: handleConfirm,
     style: {
       backgroundColor: '#68b921',
-      border: 'none',
-      fontWeight: 'bold'
+      border: '1px solid #68b921',
+      fontWeight: 'bold',
+      marginRight: '0px'
     }
   }, confirmButtonText)));
 }

@@ -132,7 +132,7 @@ export default function CropImageModal({
             <Col />
           </Row>
           <Row style={{ paddingBottom: '5px' }}>
-            <Col xs={6} md={4}>
+            <Col xs={6} md={4} style={{ paddingLeft: '0px' }}>
               <Button variant="outline-secondary" style={{ fontWeight: 'bold' }}>Change Image</Button>
             </Col>
             <Col />
@@ -161,7 +161,7 @@ export default function CropImageModal({
       </Modal.Body>
       <Modal.Footer style={{ borderTop: 'none', padding: '10px 40px' }}>
         <Grid container spacing={2} style={{ marginLeft: '0px', marginRight: 'auto', maxWidth: '40%' }}>
-          <Grid item>
+          <Grid item style={{ paddingLeft: '0px' }}>
             <RemoveCircleOutlineIcon color="disabled" />
           </Grid>
           <Grid item xs>
@@ -171,6 +171,7 @@ export default function CropImageModal({
               max={maxZoom}
               step={0.1}
               onChange={handleZoomChange}
+              style={{ padding: '10px 0px 13px 0px' }}
             />
           </Grid>
           <Grid item>
@@ -179,12 +180,12 @@ export default function CropImageModal({
         </Grid>
 
         {showRemoveButton && (
-          <Button variant="light" onClick={onRemove} style={{ fontWeight: 'bold' }}>
+          <Button variant="light" onClick={onRemove} style={{ fontWeight: 'bold', border: '1px solid' }}>
             {removeButtonText}
           </Button>
         )}
         {showConfirmButton && (
-          <Button onClick={handleConfirm} style={{ backgroundColor: '#68b921', border: 'none', fontWeight: 'bold' }}>
+          <Button onClick={handleConfirm} style={{ backgroundColor: '#68b921', border: '1px solid #68b921', fontWeight: 'bold', marginRight: '0px' }}>
             {confirmButtonText}
           </Button>
         )}

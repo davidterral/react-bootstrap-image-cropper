@@ -6,6 +6,7 @@
     "bootstrap": "^4.3.1",
     "react": "^16.9.0",
     "react-bootstrap": "^1.0.0-beta.10",
+    "react-bootstrap-image-cropper": "git+https://github.com/davidterral/react-bootstrap-image-cropper.git",
     "react-dom": "^16.9.0",
     "react-scripts": "3.1.2"
   },

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Button, Modal, Spinner, Col } from "react-bootstrap";
+import { Button, Modal, Spinner, Col, Row } from "react-bootstrap";
 import Grid from '@material-ui/core/Grid';
 import Slider from '@material-ui/core/Slider';
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
@@ -14,6 +14,17 @@ const CustomSlider = withStyles({
   root: {
     color: '#68b921',
     height: 8,
+  },
+  thumb: {
+    height: 24,
+    width: 24,
+    backgroundColor: '#fff',
+    border: '2px solid currentColor',
+    marginTop: -8,
+    marginLeft: -12,
+    '&:focus, &:hover, &$active': {
+      boxShadow: 'inherit',
+    },
   },
   active: {},
   track: {
@@ -110,9 +121,23 @@ export default function CropImageModal({
   }
 
   return (
-    <Modal show={show} onHide={onCancel} size="lg">
+    <Modal show={show} onHide={onCancel} size="lg" backdrop="static" centered>
       <Modal.Header closeButton>
-        <Modal.Title>{title}</Modal.Title>
+        <Row>
+          <Col xs={12} md={8}>
+            <Modal.Title style={{ color: '#8c8c8d', fontSize: '18' }}>{title}</Modal.Title>
+          </Col>
+          <Col xs={6} md={4} />
+        </Row>
+        <Row>
+          <Col xs={6} md={4}>
+            <Button variant="outline-secondary">Change Image</Button>
+          </Col>
+          <Col xs={6} md={4} />
+          <Col xs={6} md={4}>
+            <div style={{ color: '#b3b1b1', fontSize: '14' }}>{headerText}</div>
+          </Col>
+        </Row>
       </Modal.Header>
       <Modal.Body style={{ height: "50vh" }}>
         {resizing && (
@@ -132,22 +157,21 @@ export default function CropImageModal({
         )}
       </Modal.Body>
       <Modal.Footer>
-        <Grid container spacing={2} style={{ marginLeft: '20px', marginRight: 'auto', maxWidth: '30%' }}>
+        <Grid container spacing={2} style={{ marginLeft: '20px', marginRight: 'auto', maxWidth: '40%' }}>
           <Grid item>
-            <RemoveCircleOutlineIcon color="secondary" />
+            <RemoveCircleOutlineIcon color="disabled" />
           </Grid>
           <Grid item xs>
             <CustomSlider
               value={value ? value.zoom || 1 : 1}
               defaultValue={1}
-              color="secondary"
               max={maxZoom}
               step={0.1}
               onChange={handleZoomChange}
             />
           </Grid>
           <Grid item>
-            <AddCircleOutlineIcon color="secondary" />
+            <AddCircleOutlineIcon color="disabled" />
           </Grid>
         </Grid>
 
@@ -157,7 +181,7 @@ export default function CropImageModal({
           </Button>
         )}
         {showConfirmButton && (
-          <Button onClick={handleConfirm} style={{ backgroundColor: '#68b921' }}>
+          <Button onClick={handleConfirm} style={{ backgroundColor: '#68b921', border: 'none' }}>
             {confirmButtonText}
           </Button>
         )}

@@ -56,6 +56,17 @@ var CustomSlider = (0, _styles.withStyles)({
     color: '#68b921',
     height: 8
   },
+  thumb: {
+    height: 24,
+    width: 24,
+    backgroundColor: '#fff',
+    border: '2px solid currentColor',
+    marginTop: -8,
+    marginLeft: -12,
+    '&:focus, &:hover, &$active': {
+      boxShadow: 'inherit'
+    }
+  },
   active: {},
   track: {
     height: 8,
@@ -165,10 +176,39 @@ function CropImageModal(_ref) {
   return /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Modal, {
     show: show,
     onHide: onCancel,
-    size: "lg"
+    size: "lg",
+    backdrop: "static",
+    centered: true
   }, /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Modal.Header, {
     closeButton: true
-  }, /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Modal.Title, null, title)), /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Modal.Body, {
+  }, /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Row, null, /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Col, {
+    xs: 12,
+    md: 8
+  }, /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Modal.Title, {
+    style: {
+      color: '#8c8c8d',
+      fontSize: '18'
+    }
+  }, title)), /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Col, {
+    xs: 6,
+    md: 4
+  })), /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Row, null, /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Col, {
+    xs: 6,
+    md: 4
+  }, /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Button, {
+    variant: "outline-secondary"
+  }, "Change Image")), /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Col, {
+    xs: 6,
+    md: 4
+  }), /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Col, {
+    xs: 6,
+    md: 4
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      color: '#b3b1b1',
+      fontSize: '14'
+    }
+  }, headerText)))), /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Modal.Body, {
     style: {
       height: "50vh"
     }
@@ -189,33 +229,33 @@ function CropImageModal(_ref) {
     style: {
       marginLeft: '20px',
       marginRight: 'auto',
-      maxWidth: '30%'
+      maxWidth: '40%'
     }
   }, /*#__PURE__*/_react["default"].createElement(_Grid["default"], {
     item: true
   }, /*#__PURE__*/_react["default"].createElement(_RemoveCircleOutline["default"], {
-    color: "secondary"
+    color: "disabled"
   })), /*#__PURE__*/_react["default"].createElement(_Grid["default"], {
     item: true,
     xs: true
   }, /*#__PURE__*/_react["default"].createElement(CustomSlider, {
     value: value ? value.zoom || 1 : 1,
     defaultValue: 1,
-    color: "secondary",
     max: maxZoom,
     step: 0.1,
     onChange: handleZoomChange
   })), /*#__PURE__*/_react["default"].createElement(_Grid["default"], {
     item: true
   }, /*#__PURE__*/_react["default"].createElement(_AddCircleOutline["default"], {
-    color: "secondary"
+    color: "disabled"
   }))), showRemoveButton && /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Button, {
     variant: "light",
     onClick: onRemove
   }, removeButtonText), showConfirmButton && /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Button, {
     onClick: handleConfirm,
     style: {
-      backgroundColor: '#68b921'
+      backgroundColor: '#68b921',
+      border: 'none'
     }
   }, confirmButtonText)));
 }

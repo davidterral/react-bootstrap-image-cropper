@@ -111,7 +111,7 @@ export default function CropImageModal({
       </Modal.Body>
       <Modal.Footer>
         <Slider
-          value={value.zoom}
+          value={value.zoom || 1}
           defaultValue={1}
           color="#68b921"
           max={maxZoom}

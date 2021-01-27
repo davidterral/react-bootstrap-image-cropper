@@ -152,7 +152,7 @@ function CropImageModal(_ref) {
     aspect: aspect,
     maxZoom: maxZoom
   })), /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Modal.Footer, null, /*#__PURE__*/_react["default"].createElement(_Slider["default"], {
-    value: value.zoom,
+    value: value.zoom || 1,
     defaultValue: 1,
     color: "#68b921",
     max: maxZoom,
